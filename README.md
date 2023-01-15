@@ -3,6 +3,9 @@
 Welcome to GitHub Portfolio, your one-stop-shop for discovering the next big thing in technology. Our platform makes it easy for you to browse and search for the most innovative and promising projects and developers on GitHub. Whether you're a recruiter looking for top talent, or just a tech enthusiast on the hunt for the latest breakthroughs, our portfolio has something for everyone.
 
 ![Screenshot_20230115_214029](https://user-images.githubusercontent.com/62508858/212552849-062810ad-99cd-4a30-b09c-5cea59feca95.png)
+![Screenshot_20230115_213629](https://user-images.githubusercontent.com/62508858/212552886-df181212-357f-449c-aaf0-7404f6d6a7f3.png)
+![Screenshot_20230115_213648](https://user-images.githubusercontent.com/62508858/212552889-5165cb6b-0353-4fdb-b66a-2eabca86ff68.png)
+![Screenshot_20230115_213749](https://user-images.githubusercontent.com/62508858/212552891-ee6f2489-b5f4-42c2-9dda-36622925adc3.png)
 
 
 With GitHub Portfolio you can:
