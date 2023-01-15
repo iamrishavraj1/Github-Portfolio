@@ -1,65 +1,77 @@
 import React, { useState, useEffect } from "react";
+import mockUser from "./mockData.js/mockUser";
+import mockRepos from "./mockData.js/mockRepos";
+import mockFollowers from "./mockData.js/mockFollowers";
 import axios from "axios";
 
 const rootUrl = "https://api.github.com";
+
 const GithubContext = React.createContext();
+
 const GithubProvider = ({ children }) => {
-  const [githubUser, setGithubUser] = useState("");
-  const [githubFollowers, setGithubFollowers] = useState("");
-  const [githubRepos, setGithubrepos] = useState("");
-  const [requests, setRequests] = useState(0);
+  const [githubUser, setGithubUser] = useState(mockUser);
+  const [githubRepos, setGithubrepos] = useState(mockRepos);
+  const [githubFollowers, setGithubFollowers] = useState(mockFollowers);
+  const [requests, setRequest] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-
+  const [error, setError] = useState({ show: true, msg: "" });
+  const [titleName, setTitleName] = useState(null);
   const searchGithubUser = async (user) => {
+    toggleError();
     setIsLoading(true);
-
-    //FETCHING DATA FROM API
-    const response = await axios(`${rootUrl}/users/iamrishavraj1`).catch(
-      (error) => {
-        console.log(error);
-      }
+    const response = await axios(`${rootUrl}/users/${user}`).catch((err) =>
+      console.log(err)
     );
-
-    //IF RESPONSE IS SUCESS
+    setTitleName(response.data.name);
+    console.log(response.data.name);
     if (response) {
       setGithubUser(response.data);
       const { login, followers_url } = response.data;
-
-      //PARALLEL API CALLING
       await Promise.allSettled([
-        axios(`${rootUrl}/users/${login}/repos?per_page=10`),
+        axios(`${rootUrl}/users/${login}/repos?per_page=100`),
         axios(`${followers_url}?per_page=100`),
-      ])
-        .then((results) => {
-          const [repos, followers] = results;
-          const status = "fulfilled";
-          if (repos.status === status) {
-            setGithubrepos(repos.value.data);
-          }
-          if (followers.status === status) {
-            setGithubFollowers(followers.value.data);
-          }
-        })
-        .catch((error) => console.log(error));
+      ]).then((results) => {
+        const [repos, followers] = results;
+        const status = "fulfilled";
+        if (repos.status === status) {
+          setGithubrepos(repos.value.data);
+        }
+        if (followers.status === status) {
+          setGithubFollowers(followers.value.data);
+        }
+      });
+    } else {
+      toggleError(true, "There is no user with this username");
     }
+    checkRequest();
+    setIsLoading(false);
   };
+
   const checkRequest = () => {
     axios(`${rootUrl}/rate_limit`)
       .then(({ data }) => {
         let {
           rate: { remaining },
         } = data;
-        setRequests(remaining);
+        setRequest(remaining);
         if (remaining === 0) {
-          console.log("NO REQUEST LEFT");
+          toggleError(true, "Sorry, You have exceeded your hourly limit...");
         }
       })
-      .catch((error) => console.log(error));
+      .catch((err) => {
+        console.log(err);
+      });
   };
+  const toggleError = (show, msg) => {
+    setError({ show, msg });
+  };
+  useEffect(checkRequest, []);
+  //TITLE CHANGE
   useEffect(() => {
-    searchGithubUser();
-    checkRequest();
-  }, []);
+    document.title = titleName
+      ? `${githubUser.name}`
+      : "GitHub Portfolio: Find the Next Big Thing";
+  }, [titleName, githubUser.name]);
 
   return (
     <>
@@ -69,12 +81,14 @@ const GithubProvider = ({ children }) => {
           githubFollowers,
           githubRepos,
           requests,
+          error,
           searchGithubUser,
           isLoading,
         }}
       >
         {children}
       </GithubContext.Provider>
+      ;
     </>
   );
 };

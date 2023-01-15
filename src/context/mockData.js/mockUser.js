@@ -1,0 +1,38 @@
+const mockUser = {
+  login: "iamrishavraj1",
+  id: 62508858,
+  node_id: "MDQ6VXNlcjYyNTA4ODU4",
+  avatar_url: "https://avatars.githubusercontent.com/u/62508858?v=4",
+  gravatar_id: "",
+  url: "https://api.github.com/users/iamrishavraj1",
+  html_url: "https://github.com/iamrishavraj1",
+  followers_url: "https://api.github.com/users/iamrishavraj1/followers",
+  following_url:
+    "https://api.github.com/users/iamrishavraj1/following{/other_user}",
+  gists_url: "https://api.github.com/users/iamrishavraj1/gists{/gist_id}",
+  starred_url:
+    "https://api.github.com/users/iamrishavraj1/starred{/owner}{/repo}",
+  subscriptions_url: "https://api.github.com/users/iamrishavraj1/subscriptions",
+  organizations_url: "https://api.github.com/users/iamrishavraj1/orgs",
+  repos_url: "https://api.github.com/users/iamrishavraj1/repos",
+  events_url: "https://api.github.com/users/iamrishavraj1/events{/privacy}",
+  received_events_url:
+    "https://api.github.com/users/iamrishavraj1/received_events",
+  type: "User",
+  site_admin: false,
+  name: "Rishav Raj",
+  company: null,
+  blog: "https://iamrishavraj1.netlify.app",
+  location: "India",
+  email: null,
+  hireable: null,
+  bio: "BIT Mesra '23 || Frontend Developer || Content Writer ",
+  twitter_username: "iamrishavraj1",
+  public_repos: 23,
+  public_gists: 2,
+  followers: 52,
+  following: 44,
+  created_at: "2020-03-22T14:07:42Z",
+  updated_at: "2022-11-28T13:55:15Z",
+};
+export default mockUser;

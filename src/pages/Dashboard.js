@@ -1,16 +1,29 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
+import { Info, Repos, User, Search, Navbar } from "../components";
+import loadingImage from "../images/preloader.gif";
 import { GithubContext } from "../context/context";
+import { Link } from "react-router-dom";
 const Dashboard = () => {
-  const { githubUser, githubFollowers, githubRepos } =
-    useContext(GithubContext);
-  // console.log(githubUser);
-  // console.log(githubFollowers);
-  // console.log(githubRepos);
-  const { name } = githubUser;
+  const { isLoading } = useContext(GithubContext);
+  if (isLoading) {
+    return (
+      <>
+        <main>
+          <Navbar />
+          <Search />
+          <img src={loadingImage} className="loading-img" alt="loading" />
+        </main>
+      </>
+    );
+  }
   return (
-    <>
-      <h1>{name}</h1>
-    </>
+    <main>
+      <Navbar />
+      <Search />
+      <Info />
+      <User />
+      <Repos />
+    </main>
   );
 };
 
