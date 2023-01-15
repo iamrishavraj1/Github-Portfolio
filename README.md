@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# GitHub Portfolio : Find the Next Big Thing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to GitHub Portfolio, your one-stop-shop for discovering the next big thing in technology. Our platform makes it easy for you to browse and search for the most innovative and promising projects and developers on GitHub. Whether you're a recruiter looking for top talent, or just a tech enthusiast on the hunt for the latest breakthroughs, our portfolio has something for everyone.
 
-## Available Scripts
+With GitHub Portfolio you can:
 
-In the project directory, you can run:
+- Browse and search for repositories
+- View information such as the most popular language used in the repositories, the number of stars each repository has received, and the user's information such as their location and bio.
+- Stay ahead of the curve by exploring our constantly updated selection of cutting-edge tech.
 
-### `npm start`
+Please note, this website uses GitHub's API to retrieve user data and has a request limit of 60 per hour. If you reach the limit, please wait some time before making more requests. Don't forget to check out our beautiful error page if you ever end up on a wrong URL.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Thank you for visiting and happy browsing!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. Clone the repository: `git clone https://github.com/iamrishavraj1/github-portfolio.git`
+2. Install dependencies: `npm install` or `yarn install`
+3. Start the development server: `npm start` or `yarn start`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+1. Open the app in your browser at `http://localhost:3000`
+2. Search for a GitHub user by entering their username in the search bar
+3. Browse through their public repositories, view information such as the most popular language used, number of stars and user's information
+4. You can also view the user's information such as their location and bio
+5. Note that the app has a request limit of 60 per hour, if you reach the limit please wait some time before making more requests
+6. In case you go to a wrong URL, you can see the beauty of error page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Contributing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-### `npm run eject`
+Please make sure to update tests as appropriate.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## License
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[MIT](https://choosealicense.com/licenses/mit/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Acknowledgements
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+We would like to acknowledge and thank GitHub for providing the API that powers this application. We would also like to thank the open source community for the libraries and frameworks that were used in the development of this project. 

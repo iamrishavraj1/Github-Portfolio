@@ -27,8 +27,10 @@ const Login = () => {
             location and bio. Please note, this website uses GitHub's API to
             retrieve user data and has a
             <strong> request limit of 60 per hour</strong>. If you reach the
-            limit, please wait some time before making more requests. Thank you
-            for visiting and happy browsing!
+            limit, please wait some time before making more requests. Don't
+            forget to check out our beautiful <strong>error</strong> page if you
+            ever end up on a wrong URL. Thank you for visiting and happy
+            browsing!
           </p>
 
           <button className="btn" onClick={loginWithRedirect}>
